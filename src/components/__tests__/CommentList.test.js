@@ -17,15 +17,16 @@ describe('CommentList', () => {
             <Root initialState={initialState}>
                 <CommentList />
             </Root>
-        )
+        );
     });
 
-    // afterEach(() => {
-    //     wrapped.unmount();
-    // });
+    it('creates one LI per comment', () => {
+        expect(wrapped.find('li').lenght).toEqual(2);
+    });
 
     it('creates one LI per comment', () => {
-        console.log(wrapped.find('li').lenght);
+        expect(wrapped.render().text()).contain('Comment 1');
+        expect(wrapped.render().text()).contain('Comment 2');
     });
 })
 

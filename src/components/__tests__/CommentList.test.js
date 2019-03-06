@@ -20,6 +20,8 @@ describe('CommentList', () => {
         );
     });
 
+    console.log(wrapped);
+
     it('creates one LI per comment', () => {
         expect(wrapped.find('li').lenght).toEqual(2);
     });

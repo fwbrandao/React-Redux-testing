@@ -1,6 +1,5 @@
 export default ({ dispatch }) => next => action => {
     // CHECK TO SEE IF ACTION HAS PROMISE
-    debugger;
     if (!action.payload || !action.payload.then) {
         return next(action);
     }

@@ -1,32 +1,25 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-undef */
 import React, { Component } from 'react';
 
 class Switch extends Component {
 
-
     state = {  }
 
-    toggleColor() {
-
-        switch (Colors) {
-            case BLUE:
-                <div className="blue"></div>
-                break;
-            case RED:
-                <div className="red"></div>
-                break;
-            case YELLOW:
-                <div className="yellow"></div>
-                break;
+    toggleColor(colors) {
+        switch (colors) {
+            case "BLUE":
+                return <div className="blue"></div>
+            case "RED":
+                return <div className="red"></div>
+            case "YELLOW":
+                return <div className="yellow"></div>
             default:
                 console.log('Other Color');
                 break;
         }
     }
     render() {
-        return (<div>
-            <button onClick={this.toggleColor}></button>
+        return (<div {...this.toggleColor()}>
+            <button onClick={this.toggleColor()}></button>
         </div>
         );
     }
